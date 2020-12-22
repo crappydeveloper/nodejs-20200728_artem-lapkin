@@ -10,8 +10,13 @@ module.exports.register = async (ctx, next) => {
     verificationToken: uuid()
   }
 
-  const user = await User.create(userData);
-  console.log(user);
+  //try {
+  	const user = await User.create(userData);
+  //} catch (err) {
+  //	ctx.status = err.status;
+  //  ctx.body = {error: err.message};
+  //}
+  // Если mail не валидируется автоматически, то нужно добавить проверку в router.post('/register', ВОТ СЮДА, register);
 };
 
 module.exports.confirm = async (ctx, next) => {
