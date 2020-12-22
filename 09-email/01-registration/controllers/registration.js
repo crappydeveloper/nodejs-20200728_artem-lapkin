@@ -10,6 +10,9 @@ module.exports.register = async (ctx, next) => {
     verificationToken: uuid()
   }
 
+
+ // для отправки использовать sendMail()
+
   //try {
   	const user = await User.create(userData);
   //} catch (err) {
